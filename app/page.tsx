@@ -6,6 +6,7 @@ import { ArrowDown, ArrowUpRight, GitFork, Mail, Smartphone, Server, PanelsTopLe
 import { ThemeToggle } from '@/components/theme-toggle';
 import { TechCard } from '@/components/tech-card';
 import { PixelMahdi } from '@/components/pixel-mahdi';
+import { LinkedInIcon } from '@/components/linkedin-icon';
 
 const technologies = [
   { name: 'React', label: 'Web', icon: PanelsTopLeft, tone: 'violet' },
@@ -41,7 +42,7 @@ export default function Home() {
       </motion.nav>
 
       <section className="hero heroEditorial shell" id="top">
-        <div className="socialRail"><a href="mailto:mahdizaied.21@gmail.com" aria-label="Email Mahdi"><Mail size={18}/></a><a href="https://github.com/Mahdizaied1" aria-label="Mahdi on GitHub"><GitFork size={18}/></a><span/></div>
+        <div className="socialRail"><a href="mailto:mahdizaied.21@gmail.com" aria-label="Email Mahdi"><Mail size={18}/></a><a href="https://github.com/Mahdizaied1" aria-label="Mahdi on GitHub"><GitFork size={18}/></a><a href="https://www.linkedin.com/in/mahdi-zaied-41666a155/" aria-label="Mahdi on LinkedIn (opens in a new tab)" target="_blank" rel="noopener noreferrer"><LinkedInIcon/></a><span/></div>
         <PixelMahdi onSettled={handleHeroSettled} />
         <div id="page-content" tabIndex={-1} className={'heroCopy heroReveal' + (heroArrived ? ' arrived' : '')}>
           <div className="heroBubble">
@@ -90,7 +91,7 @@ export default function Home() {
         <a href="mailto:mahdizaied.21@gmail.com">mahdizaied.21@gmail.com <ArrowUpRight size={28} /></a>
       </motion.section>
 
-      <footer className="footer shell"><a className="brand" href="#top">MZ<span>.</span></a><p>Full-stack developer · React · React Native · Node.js</p><div><a href="mailto:mahdizaied.21@gmail.com">Email</a><a href="https://github.com/Mahdizaied1">GitHub</a><a href="/work/educaways">Case study</a></div></footer>
+      <footer className="footer shell"><a className="brand" href="#top">MZ<span>.</span></a><p>Full-stack developer · React · React Native · Node.js</p><div><a href="mailto:mahdizaied.21@gmail.com">Email</a><a href="https://github.com/Mahdizaied1">GitHub</a><a href="https://www.linkedin.com/in/mahdi-zaied-41666a155/" aria-label="LinkedIn (opens in a new tab)" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="/work/educaways">Case study</a></div></footer>
     </main>
   );
 }

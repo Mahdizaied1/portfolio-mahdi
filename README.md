@@ -108,4 +108,5 @@ Social-preview links default to the live portfolio URL. If you add a custom doma
 Full-Stack Developer
 
 - [GitHub](https://github.com/Mahdizaied1)
+- [LinkedIn](https://www.linkedin.com/in/mahdi-zaied-41666a155/)
 - Email: [mahdizaied.21@gmail.com](mailto:mahdizaied.21@gmail.com)

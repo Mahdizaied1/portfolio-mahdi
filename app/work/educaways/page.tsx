@@ -66,6 +66,6 @@ export default function EducaWaysPage(){
     <section className="mobileSection" id="mobile"><RevealDiv className="shell"><div className="caseSectionHead"><p className="kicker">04 / Expo apps</p><h2>Mobile <em>redesign.</em></h2></div><MobileEvidence/></RevealDiv></section>
 
     <RevealSection className="caseCta shell"><p className="kicker">Contact</p><h2>Let’s talk.</h2><a href="mailto:mahdizaied.21@gmail.com?subject=EducaWays%20case%20study">Email me <ArrowUpRight/></a></RevealSection>
-    <footer className="footer shell"><a className="brand" href="/">MZ<span>.</span></a><p>EducaWays · Full-stack case study</p><div><a href="mailto:mahdizaied.21@gmail.com">Email</a><a href="/">Portfolio</a></div></footer>
+    <footer className="footer shell"><a className="brand" href="/">MZ<span>.</span></a><p>EducaWays · Full-stack case study</p><div><a href="mailto:mahdizaied.21@gmail.com">Email</a><a href="https://www.linkedin.com/in/mahdi-zaied-41666a155/" aria-label="LinkedIn (opens in a new tab)" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="/">Portfolio</a></div></footer>
   </main>
 }
