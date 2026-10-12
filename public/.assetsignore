@@ -1,0 +1,2 @@
+# Keep the local animation playground out of the public deployment.
+/pixel/preview.html
