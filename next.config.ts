@@ -1,5 +1,12 @@
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {};
+const pages = process.env.GITHUB_PAGES === '1';
+
+const nextConfig: NextConfig = pages
+  ? {
+      output: 'export',
+      images: { unoptimized: true },
+    }
+  : {};
 
 export default nextConfig;

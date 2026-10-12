@@ -3,6 +3,7 @@
 import { useState, type CSSProperties } from 'react';
 import { Expand } from 'lucide-react';
 import { useScreenshotViewer } from './screenshot-viewer';
+import { sitePath } from '@/lib/site-path';
 
 const comparisons = [
   { title: 'Dashboard', before: 'dashboard-before.jpg', after: 'dashboard-after.jpg', note: 'The legacy dashboard already counted profiles. The redesign adds scoped community analytics and clearer navigation.' },
@@ -15,7 +16,7 @@ export function BeforeAfter() {
   const { open, viewer } = useScreenshotViewer('comparison-screenshot-title');
   const comparison = comparisons[selected];
   const viewingBefore = position === 100;
-  const path = '/images/educaways/';
+  const path = sitePath('/images/educaways/');
   return (
     <div className="compare compareReal" style={{ '--position': `${position}%` } as CSSProperties}>
       <div className="compareToolbar"><div className="evidenceTabs" role="group" aria-label="Choose web redesign comparison">

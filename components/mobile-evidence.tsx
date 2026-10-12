@@ -1,10 +1,11 @@
 'use client';
 
 import { Screenshot, useScreenshotViewer, type ProductShot } from './screenshot-viewer';
+import { sitePath } from '@/lib/site-path';
 
-const before: ProductShot = {src:'/images/educaways/student-home-before.png', title:'Student Home · before', alt:'Legacy student Home with Mathematics and Arabic sessions on 2 October 2026'};
-const after: ProductShot = {src:'/images/educaways/student-home-after.png', title:'Student Home · after', alt:'Redesigned student Home with a personalised greeting, week calendar, and the same Mathematics and Arabic sessions'};
-const parent: ProductShot = {src:'/images/educaways/parent-payment-details.png', title:'Parent · payment details', alt:'Parent payment details showing a paid October bill with tuition and canteen service breakdown'};
+const before: ProductShot = {src:sitePath('/images/educaways/student-home-before.png'), title:'Student Home · before', alt:'Legacy student Home with Mathematics and Arabic sessions on 2 October 2026'};
+const after: ProductShot = {src:sitePath('/images/educaways/student-home-after.png'), title:'Student Home · after', alt:'Redesigned student Home with a personalised greeting, week calendar, and the same Mathematics and Arabic sessions'};
+const parent: ProductShot = {src:sitePath('/images/educaways/parent-payment-details.png'), title:'Parent · payment details', alt:'Parent payment details showing a paid October bill with tuition and canteen service breakdown'};
 
 export function MobileEvidence() {
   const { open, viewer } = useScreenshotViewer('mobile-screenshot-title');

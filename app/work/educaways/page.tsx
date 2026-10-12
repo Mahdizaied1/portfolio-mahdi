@@ -5,6 +5,9 @@ import type { Metadata } from 'next';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { EducaWaysGallery } from '@/components/educaways-gallery';
 import { MobileEvidence } from '@/components/mobile-evidence';
+import { sitePath } from '@/lib/site-path';
+
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'EducaWays Case Study — Mahdi Zaied',
@@ -36,14 +39,14 @@ const contributions = [
 
 export default function EducaWaysPage(){
   return <main className="casePage">
-    <nav className="caseNav shell"><a className="brand" href="/">MZ<span>.</span></a><div className="caseNavActions"><ThemeToggle/><a href="/"><ArrowLeft size={16}/> Back to portfolio</a></div></nav>
+    <nav className="caseNav shell"><a className="brand" href={sitePath('/')}>MZ<span>.</span></a><div className="caseNavActions"><ThemeToggle/><a href={sitePath('/')}><ArrowLeft size={16}/> Back to portfolio</a></div></nav>
       <header className="caseHero shell" id="page-content" tabIndex={-1}>
       <p className="kicker">Full-stack case study</p>
       <h1>Educa<span>Ways</span></h1>
       <div className="caseLead"><p>I develop the React admin, Expo mobile apps, and Node.js backend for a school-management platform.</p><div className="caseFacts"><p><span>My role</span>Full-stack developer</p><p><span>I work on</span>Web · Mobile · Backend</p><p><span>Core stack</span>React · Expo · Node.js</p></div></div>
       <div className="caseNotice"><Zap size={18}/><p>Private school platform. Screenshots use local test data, not client records or production-impact metrics.</p></div>
       <div className="caseJumpNav" aria-label="Case study sections"><a href="#contribution">My contribution</a><a href="#redesign">Before & after</a><a href="#web-platform">Web screens</a><a href="#mobile">Mobile redesign</a></div>
-      <div className="caseHeroPreview"><img src="/images/educaways/dashboard-after.jpg" alt="Redesigned EducaWays dashboard with community counts, enrolment statistics, and an age-distribution chart" width={1905} height={1080} fetchPriority="high" decoding="async"/><span>Community dashboard</span></div>
+      <div className="caseHeroPreview"><img src={sitePath('/images/educaways/dashboard-after.jpg')} alt="Redesigned EducaWays dashboard with community counts, enrolment statistics, and an age-distribution chart" width={1905} height={1080} fetchPriority="high" decoding="async"/><span>Community dashboard</span></div>
     </header>
 
     <RevealSection className="contributionSection shell" id="contribution">
@@ -66,6 +69,6 @@ export default function EducaWaysPage(){
     <section className="mobileSection" id="mobile"><RevealDiv className="shell"><div className="caseSectionHead"><p className="kicker">04 / Expo apps</p><h2>Mobile <em>redesign.</em></h2></div><MobileEvidence/></RevealDiv></section>
 
     <RevealSection className="caseCta shell"><p className="kicker">Contact</p><h2>Let’s talk.</h2><a href="mailto:mahdizaied.21@gmail.com?subject=EducaWays%20case%20study">Email me <ArrowUpRight/></a></RevealSection>
-    <footer className="footer shell"><a className="brand" href="/">MZ<span>.</span></a><p>EducaWays · Full-stack case study</p><div><a href="mailto:mahdizaied.21@gmail.com">Email</a><a href="https://www.linkedin.com/in/mahdi-zaied-41666a155/" aria-label="LinkedIn (opens in a new tab)" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="/">Portfolio</a></div></footer>
+    <footer className="footer shell"><a className="brand" href={sitePath('/')}>MZ<span>.</span></a><p>EducaWays · Full-stack case study</p><div><a href="mailto:mahdizaied.21@gmail.com">Email</a><a href="https://www.linkedin.com/in/mahdi-zaied-41666a155/" aria-label="LinkedIn (opens in a new tab)" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={sitePath('/')}>Portfolio</a></div></footer>
   </main>
 }
