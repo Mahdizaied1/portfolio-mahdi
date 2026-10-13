@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useLanguage } from './language';
+import { sitePath } from '@/lib/site-path';
 
 type ScenePhase = 'walk' | 'sit' | 'idle' | 'glanceIn' | 'glanceHold' | 'glanceOut';
 
@@ -27,10 +29,11 @@ const loadImage = (source: string) => new Promise<HTMLImageElement>((resolve, re
   const image = new Image();
   image.onload = () => resolve(image);
   image.onerror = () => reject(new Error('Unable to load ' + source));
-  image.src = source;
+  image.src = sitePath(source);
 });
 
 export function PixelMahdi({ onSettled }: PixelMahdiProps) {
+  const { t } = useLanguage();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const onSettledRef = useRef(onSettled);
   const requestGlanceRef = useRef<(isEngaged: boolean) => void>(() => undefined);
@@ -291,7 +294,7 @@ export function PixelMahdi({ onSettled }: PixelMahdiProps) {
       <button
         className="pixelMahdiHotspot"
         type="button"
-        aria-label="Pixel Mahdi looks at you"
+        aria-label={t('Pixel Mahdi looks at you')}
         onPointerEnter={() => { pointerEngagedRef.current = true; updateEngagement(); }}
         onPointerLeave={() => { pointerEngagedRef.current = false; updateEngagement(); }}
         onFocus={() => { focusEngagedRef.current = true; updateEngagement(); }}

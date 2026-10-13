@@ -2,6 +2,7 @@
 
 import { Cloud, Moon, Star, Sun } from 'lucide-react';
 import { useEffect, useSyncExternalStore } from 'react';
+import { useLanguage } from './language';
 
 type Theme = 'dark' | 'light';
 const themeEvent = 'portfolio-theme-change';
@@ -19,6 +20,7 @@ const getTheme = (): Theme => document.documentElement.dataset.theme === 'light'
 const getServerTheme = (): Theme => 'dark';
 
 export function ThemeToggle() {
+  const { t } = useLanguage();
   const theme = useSyncExternalStore(subscribe, getTheme, getServerTheme);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export function ThemeToggle() {
   };
 
   return (
-    <button className="themeToggle" data-weather={theme} type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`} title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
+    <button className="themeToggle" data-weather={theme} type="button" onClick={toggleTheme} aria-label={t(theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')} title={t(theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')}>
       <span className="themeWeather" aria-hidden="true">
         <Sun className="weatherSun" size={19} strokeWidth={2.4}/>
         <Moon className="weatherMoon" size={18} strokeWidth={2.4}/>
